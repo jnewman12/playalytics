@@ -3,7 +3,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: News Cycle,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #FFFFFF; /* grey, current color  */
+    background-color: #FFFFFF;
 }
 
 html {
@@ -37,7 +37,7 @@ p {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: transparent !important; /* this is navbar color on mobile */
+    background-color: transparent !important;
     background: transparent;
 }
 
@@ -135,7 +135,7 @@ This changes the color of the navbar when pressing the button on mobile
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(playlytics.jpg) no-repeat bottom center scroll;
+    background: url(playalytics.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;

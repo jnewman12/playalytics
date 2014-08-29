@@ -16,4 +16,3 @@ end
 
 #spotify
 gem 'rspotify'
-
