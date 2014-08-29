@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 	end
 
 	def music
-		@music = RSpotify::Track.search([':name'])
+		@music = RSpotify::Track.search([':popular'])
 		render :json => @music
 	end
 
