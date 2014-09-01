@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
 private
 
-  def current_user
-  	@current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def spotify_user
+    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
   end
 
-  helper_method :current_user
+  helper_method :spotify_user
 end

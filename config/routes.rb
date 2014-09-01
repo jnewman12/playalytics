@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/search_spotify' => 'users#search_spotify'
 
   scope :api do
-    #get "/user(.:format)" => "users#user_info"
+    get "/user(.:format)" => "users#spotify_user"
     get "/music(.:format)" => "users#music"
   end
 end

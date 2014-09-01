@@ -1,2 +1,2 @@
 // start of angular 
-window.App = angular.module('playalytics', ['ngResource'])
+window.App = angular.module('playalytics', ['ngResource', 'ngRoute'])

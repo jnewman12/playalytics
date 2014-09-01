@@ -2,11 +2,13 @@ class UsersController < ApplicationController
 
 	# user's home
 	def home
+		@spotify_user = spotify_user
+		render :json => @spotify_user
 	end
 
 	def spotify_user
 		@spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-		redirect_to '/home'
+	    redirect_to "/home"
 	end
 
 	def user_info
@@ -17,13 +19,6 @@ class UsersController < ApplicationController
 	def music
 		@music = RSpotify::Track.search(params[:search])
 		render :json => @music
-	end
-
-	def search_spotify(search)
-		@search_results = HTTParty.get('https://api.spotify.com/v1/searchq=#{search}')
-		respond_to do |format|
-			render :json => @search_results
-		end
 	end
 
 end
