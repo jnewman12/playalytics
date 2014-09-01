@@ -19,6 +19,6 @@ module Playalytics
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    RSpotify::authenticate("7c48336da6c849d0b6850f68382ffb11", "358ab892745b44e39539174c88f82c1d")
+    RSpotify::authenticate("79e4fd1d574549478d00f857af9d4bc6", "c4989f31895d4ffda01f459a46a652e5")
   end
 end
