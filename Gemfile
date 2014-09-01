@@ -16,3 +16,4 @@ end
 
 #spotify
 gem 'rspotify'
+gem 'httparty'

@@ -43,6 +43,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     hashie (3.3.1)
     hike (1.2.3)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
@@ -191,6 +194,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap_form
+  httparty
   jquery-rails
   newrelic_rpm
   pg

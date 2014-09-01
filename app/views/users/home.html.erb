@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li>
-                <h6><a href="#">User_Name</a></h6>
+                <h6><a href="#"><%= @spotify_user.id %></a></h6>
             </li>
             <li>
                 <h6><a href="#"></a></h6>
@@ -20,13 +20,13 @@
                 <h6><a href="#">Make Playlist</a></h6>
             </li>
             <li>
-                <h6><a href="#"></a></h6>
-            </li>
-            <li>
-                <h6><a href="#"></a></h6>
-            </li>
-            <li>
                 <h6><a href="#">Total Coolness Factor</a></h6>
+            </li>
+            <li>
+                <h6><a href="#"></a></h6>
+            </li>
+            <li>
+                <h6><%#= link_to "Sign out", signout_path %></h6>
             </li>
         </ul>
     </div>
@@ -40,9 +40,14 @@
                     <h1>Welcome, User.name</h1>
                     <br/>
                     <br/>
+                    <%= bootstrap_form_for "/search_spotify(search)" do |f| %>
                     <div class="input">
                         <h2>Search for a song</h2>
-                        <p><input type="text" class="form-control" placeholder="Search for an artist or track"></p>
+                        <div class="col-md-4">
+                          <%= text_field_tag(:search, nil, class: 'form-control input-m') %>
+                          <%= submit_tag :search, class: 'btn btn-default' %>
+                          <% end %>
+                        </div>
                     </div>    
                     <!--
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->

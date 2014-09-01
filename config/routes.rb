@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   root to: "home#index"
 
-  #auth
-  get '/auth/spotify/callback', to: 'sessions#create'
-
-  resources :users
+  #auth sign in
+  get '/auth/:spotify/callback', to: 'users#spotify_user', via: [:get, :post]
 
   get '/home', to: 'users#home'
 
+  #test
+  get '/search_spotify' => 'users#search_spotify'
+
   scope :api do
-    get "/create(.:format)" => "sessions#create"
+    #get "/user(.:format)" => "users#user_info"
     get "/music(.:format)" => "users#music"
   end
 end
