@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li>
-                <h6><a href="#">user.name</a></h6>
+                <h6><a href="#">spotify_user.name</a></h6>
             </li>
             <li>
                 <h6><a href="#"></a></h6>
@@ -36,21 +36,15 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1>Welcome, User.name</h1>
-                    <br/>
-                    <br/>
-                    <%= bootstrap_form_for '/music' do |f| %>
-                    <div class="input">
-                        <h2>Search for a song</h2>
-                        <div class="col-md-7">
-                          <%= text_field_tag(:search, nil, class: 'form-control input-m') %>
-                          <%= submit_tag :search, class: 'btn btn-default' %>
-                          <% end %>
-                        </div>
-                    </div>    
-                </div>
+                <div class="input-group input-group-lg">
+				   <span class="input-group-addon">
+				      <i class="fa fa-download"></i>
+				   </span>
+				   <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+				   <input class="form-control input-lg" id="spotify-album-search" name="album[query]" placeholder="Search" type="text" autocomplete="off">
+				</div>
             </div>
         </div>
     </div>
 </div>
+

@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get '/home', to: 'users#home'
 
   #test
-  get '/search_spotify' => 'users#search_spotify'
+  post '/home' => 'users#music'
+
+  get '/show' => "users#show"
 
   scope :api do
-    get "/user(.:format)" => "users#spotify_user"
+    get "/user(.:format)" => "users#home"
     get "/music(.:format)" => "users#music"
   end
 end
