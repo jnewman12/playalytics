@@ -1,0 +1,6 @@
+<% @music.each do |track| %>
+  <p>
+    <%= track.id %>
+    <%= link_to "add to playlist", {action: 'add_to_playlist', id: track.id}, remote: true, method: :post %>
+  </p>
+<% end %>

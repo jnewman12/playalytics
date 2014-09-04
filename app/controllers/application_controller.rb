@@ -3,11 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :login_spotify_user
+
 private
 
-  def spotify_user
-    @spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+  def login_spotify_user
+    unless session[:user_id]
+      # redirect ... login ...
+      return nil
+    end
+    @user = User.find(session[:user_id])
+    @spotify_user = RSpotify::User.new(JSON.parse(@user.raw_data))
   end
 
-  helper_method :spotify_user
 end

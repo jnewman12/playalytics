@@ -37,19 +37,32 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Welcome, User.name</h1>
+                    <h1>Welcome, <%= @spotify_user.id %></h1>
+
+                    <p>playlists</p>
+                    <% playlist = @spotify_user.create_playlist!('my-awesome-playlist') %>
+                    <% @spotify_user.playlists.each do |playlist| %>
+                      <%= playlist.name %>
+                    <% end %>
+
                     <br/>
                     <br/>
-                    <%= bootstrap_form_for '/music' do |f| %>
-                    <div class="input">
+                    <%= bootstrap_form_for('/music', remote: true) do |f| %>
+                      <div class="input">
                         <h2>Search for a song</h2>
                         <div class="col-md-7">
                           <%= text_field_tag(:search, nil, class: 'form-control input-m') %>
                           <%= submit_tag :search, class: 'btn btn-default' %>
                           <% end %>
                         </div>
-                    </div>    
+                      </div>
+                    </form>
                 </div>
+            </div>
+            <div class="row">
+              <div id="music">
+                
+              </div>
             </div>
         </div>
     </div>
