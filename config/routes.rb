@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   #test
   post '/home' => 'users#music'
 
+  post "/add_to_playlist" => "users#add_to_playlist"
+
   get '/show' => "users#show"
 
   scope :api do
